@@ -1,6 +1,10 @@
+import { Star } from "lucide-react"
+import { Badge } from "../ui/badge"
+import { Card } from "../ui/card"
+
 export function PropertyCard() {
   return (
-    <div>
+    <Card>
       {/* Background image */}
       <img
         src={
@@ -9,11 +13,13 @@ export function PropertyCard() {
         alt={"title"}
       />
       {/* Rating badge */}
-      <span>*</span>
+      <Badge>
+        <Star />
+      </Badge>
 
       {/* Bottom info */}
       <div>
-        <span>House</span>
+        <Badge>House</Badge>
         <h3>Green Villa Colombo</h3>
         <p>Colombo, Sri Lanka</p>
         <p>
@@ -21,6 +27,6 @@ export function PropertyCard() {
           <span> /Month</span>
         </p>
       </div>
-    </div>
+    </Card>
   )
 }
