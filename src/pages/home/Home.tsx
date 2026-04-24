@@ -9,13 +9,7 @@ export function Home() {
         {properties.map((property) => (
           <PropertyCard
             key={property.id}
-            id={property.id}
-            title={property.title}
-            location={property.location}
-            type={property.type}
-            price={property.price}
-            rating={property.rating}
-            image={property.image}
+            {...property} // Spread operator to pass all property fields as props
           />
         ))}
       </div>
