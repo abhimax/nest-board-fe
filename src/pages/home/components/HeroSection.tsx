@@ -10,8 +10,8 @@ export function HeroSection() {
       }}
     >
       {/* Dark overlay */}
-      {/* <div className="absolute inset-0 bg-black/55" /> */}
-      <div className="flex flex-col items-center">
+      <div className="z-10 absolute inset-0 bg-black/55" />
+      <div className="z-20 flex flex-col items-center">
         {/* Country badge */}
         <div className="mt-20 mb-5 inline-flex items-center gap-1.5 px-3 py-1 text-sm text-white/90">
           🇱🇰 SRI LANKA
