@@ -2,7 +2,10 @@ import { Search, SlidersHorizontal } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 
-export function SearchFilters() {
+type SearchFiltersProps = {
+  readonly onSearchChange: (value: string) => void
+}
+export function SearchFilters({ onSearchChange }: SearchFiltersProps) {
   return (
     <div className="relative z-20 -mt-7 px-4">
       <div className="rounded-2xl bg-white p-8 shadow-xl">
@@ -13,6 +16,7 @@ export function SearchFilters() {
             <Input
               placeholder="Search by property name or city..."
               className="h-10 rounded-xl border-gray-200 pl-9"
+              onChange={(e) => onSearchChange(e.target.value)}
             />
           </div>
           <Button
