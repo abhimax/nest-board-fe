@@ -16,8 +16,8 @@ export function SearchFilters() {
             />
           </div>
           <Button
-            variant="outline"
-            className="h-10 gap-1.5 rounded-xl border-gray-200 text-gray-600"
+            variant="ghost"
+            className="h-10 gap-1.5 rounded-xl text-gray-600"
           >
             <SlidersHorizontal />
             Filters
