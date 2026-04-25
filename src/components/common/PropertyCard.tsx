@@ -2,7 +2,7 @@ import { Star } from "lucide-react"
 import { Badge } from "../ui/badge"
 import { Card } from "../ui/card"
 
-type peopType = {
+type propType = {
   image: string
   title: string
   location: string
@@ -11,7 +11,7 @@ type peopType = {
   rating: string
 }
 
-export function PropertyCard(props: peopType) {
+export function PropertyCard(props: propType) {
   return (
     <Card
       className="relative cursor-pointer rounded-2xl p-0 ring-0"
