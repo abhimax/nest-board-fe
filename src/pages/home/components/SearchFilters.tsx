@@ -1,4 +1,12 @@
-import { Search, SlidersHorizontal } from "lucide-react"
+import {
+  Search,
+  SlidersHorizontal,
+  Home,
+  Building2,
+  Warehouse,
+  Hotel,
+  type LucideIcon,
+} from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 
@@ -7,7 +15,23 @@ type SearchFiltersProps = {
   readonly onSearchChange: (value: string) => void
 }
 
-export function SearchFilters({ searchQuery, onSearchChange }: SearchFiltersProps) {
+interface Category {
+  label: string
+  icon: LucideIcon | null
+}
+
+const categories: Category[] = [
+  { label: "All", icon: null },
+  { label: "House", icon: Home },
+  { label: "Villa", icon: Warehouse },
+  { label: "Apartment", icon: Building2 },
+  { label: "Hotel", icon: Hotel },
+]
+
+export function SearchFilters({
+  searchQuery,
+  onSearchChange,
+}: SearchFiltersProps) {
   return (
     <div className="relative z-20 -mt-7 px-4">
       <div className="rounded-2xl bg-white p-8 shadow-xl">
@@ -29,6 +53,15 @@ export function SearchFilters({ searchQuery, onSearchChange }: SearchFiltersProp
             <SlidersHorizontal />
             Filters
           </Button>
+        </div>
+        {/* Category tabs */}
+        <div className="flex items-center gap-1.5">
+          {categories.map(({ label, icon: Icon }) => (
+            <Button key={label} size="sm" className="gap-1.5 rounded-full">
+              {Icon && <Icon />}
+              {label}
+            </Button>
+          ))}
         </div>
       </div>
     </div>
