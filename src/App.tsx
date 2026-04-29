@@ -9,14 +9,14 @@ export function App() {
       {/* Navigation Links */}
       <nav>
         <Link to="/">Explore</Link>
-        <Link to="/about">Property Details</Link>
+        <Link to="/property-details">Property Details</Link>
         <Link to="/map">Map View</Link>
       </nav>
 
       {/* Routes */}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<Property />} />
+        <Route path="/property-details" element={<Property />} />
         <Route path="/map" element={<Map />} />
       </Routes>
     </BrowserRouter>
