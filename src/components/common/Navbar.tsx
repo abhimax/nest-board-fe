@@ -15,14 +15,16 @@ export function Navbar({ links }: NavbarProps) {
     <div className="absolute top-0 right-0 left-0 z-50 px-4 pt-4">
       <nav className="flex items-center justify-between rounded-full bg-orange-500/50 px-5 py-3">
         {/* Logo */}
-        <div className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
-            <Building2 className="h-5 w-5 text-white" />
+        <NavLink to="/">
+          <div className="flex items-center gap-2">
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
+              <Building2 className="h-5 w-5 text-white" />
+            </div>
+            <span className="font-regular text-lg tracking-wide text-white">
+              NestBoard
+            </span>
           </div>
-          <span className="font-regular text-lg tracking-wide text-white">
-            NestBoard
-          </span>
-        </div>
+        </NavLink>
 
         {/* Nav links */}
         <div className="flex items-center gap-0.5">
