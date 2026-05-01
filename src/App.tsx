@@ -1,6 +1,6 @@
 import { BrowserRouter, Link, Route, Routes } from "react-router"
 import { Home } from "./pages/home/Home"
-import { Property } from "./pages/property/PropertyDetails"
+import { PropertyDetails } from "./pages/property/PropertyDetails"
 import { Map } from "./pages/map/Map"
 
 export function App() {
@@ -16,7 +16,7 @@ export function App() {
       {/* Routes */}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/property-details" element={<Property />} />
+        <Route path="/property-details" element={<PropertyDetails />} />
         <Route path="/map" element={<Map />} />
       </Routes>
     </BrowserRouter>
