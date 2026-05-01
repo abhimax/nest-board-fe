@@ -1,5 +1,7 @@
 import { PropertyInfo } from "./components/PropertyInfo"
 import { PropertySection } from "./components/PropertySection"
+import type { Room } from "@/types/property"
+import { RoomList } from "./components/RoomList"
 
 const mockProperty = {
   id: "prop-detail-001",
@@ -12,6 +14,32 @@ const mockProperty = {
   seatsAvailable: 4,
   minStay: "3 months",
   startingPrice: "LKR 25K",
+  rooms: [
+    {
+      id: "room-a",
+      name: "Room A",
+      price: "35,000",
+      seatsTotal: 4,
+      seatsFree: 1,
+      hasAC: true,
+    },
+    {
+      id: "room-b",
+      name: "Room B",
+      price: "35,000",
+      seatsTotal: 4,
+      seatsFree: 2,
+      hasAC: true,
+    },
+    {
+      id: "room-c",
+      name: "Room C",
+      price: "25,000",
+      seatsTotal: 4,
+      seatsFree: 1,
+      hasAC: false,
+    },
+  ] satisfies Room[],
 }
 
 export function PropertyDetails() {
@@ -34,7 +62,7 @@ export function PropertyDetails() {
         </div>
 
         <div className="mt-5">
-          <p>Room type list goes here...</p>
+          <RoomList rooms={mockProperty.rooms} />
         </div>
       </div>
     </div>
