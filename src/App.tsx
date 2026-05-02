@@ -3,6 +3,7 @@ import { Home } from "./pages/home/Home"
 import { PropertyDetails } from "./pages/property/PropertyDetails"
 import { Map } from "./pages/map/Map"
 import { Navbar, type NavbarLink } from "./components/common/Navbar"
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
 
 const navLinks: NavbarLink[] = [
   { label: "Explore", to: "/" },
@@ -22,6 +23,7 @@ export function App() {
         <Route path="/property-details/:id" element={<PropertyDetails />} />
         <Route path="/map" element={<Map />} />
       </Routes>
+      <ReactQueryDevtools initialIsOpen={false} />
     </BrowserRouter>
   )
 }
