@@ -1,9 +1,10 @@
 import { useState } from "react"
 import { HeroSection } from "./components/HeroSection"
-import { properties } from "@/data/properties"
+// import { properties } from "@/data/properties"
 import { PropertyList } from "./components/PropertyList"
 import { SearchFilters } from "./components/SearchFilters"
 import type { Property } from "@/types/property"
+import { useProperties } from "@/hooks/useProperties"
 
 export function Home() {
   const [searchQuery, setSearchQuery] = useState("")
@@ -11,6 +12,7 @@ export function Home() {
     Property["type"] | "All"
   >("House")
 
+  const { data: properties = [], isLoading, isError } = useProperties()
   const filterBySearch = (property: Property) => {
     return (
       searchQuery === "" ||
@@ -36,7 +38,14 @@ export function Home() {
         onSearchChange={setSearchQuery}
         onCategoryChange={setActiveCategory}
       />
-      <PropertyList properties={filteredProperties} />
+      {isError && (
+        <div className="px-8 py-10 text-red-400">
+          Failed to load properties. Please try again.
+        </div>
+      )}
+      {!isLoading && !isError && (
+        <PropertyList properties={filteredProperties} />
+      )}
     </>
   )
 }
