@@ -1,7 +1,7 @@
 import { PropertyCard } from "@/components/common/PropertyCard"
 import type { Property } from "@/types/property"
 
-interface PropertyListProps {
+type PropertyListProps = {
   properties: Property[]
 }
 
