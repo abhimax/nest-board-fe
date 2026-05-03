@@ -12,10 +12,10 @@ import { Button } from "@/components/ui/button"
 import type { Property } from "@/types/property"
 
 type SearchFiltersProps = {
-  readonly searchQuery: string
-  readonly activeCategory: Property["type"] | "All"
-  readonly onSearchChange: (value: string) => void
-  readonly onCategoryChange: (value: Property["type"] | "All") => void
+  searchQuery: string
+  activeCategory: Property["type"] | "All"
+  onSearchChange: (value: string) => void
+  onCategoryChange: (value: Property["type"] | "All") => void
 }
 
 interface Category {
