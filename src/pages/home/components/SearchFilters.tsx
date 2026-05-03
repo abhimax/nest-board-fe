@@ -3,7 +3,7 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 
 type SearchFiltersProps = {
-  readonly onSearchChange: (value: string) => void
+  onSearchChange: (value: string) => void
 }
 export function SearchFilters({ onSearchChange }: SearchFiltersProps) {
   return (
