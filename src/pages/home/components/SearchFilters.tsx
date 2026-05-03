@@ -11,8 +11,8 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 
 type SearchFiltersProps = {
-  readonly searchQuery: string
-  readonly onSearchChange: (value: string) => void
+  searchQuery: string
+  onSearchChange: (value: string) => void
 }
 
 interface Category {
